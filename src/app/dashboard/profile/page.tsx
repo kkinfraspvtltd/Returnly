@@ -12,7 +12,7 @@ export default async function ProfilePage() {
 
   const { data: profile } = await supabase
     .from('profiles')
-    .select('full_name,phone_number,address,reputation_score,wallet_balance,credits,has_finder_badge')
+    .select('full_name,phone_number,address,city,state_region,country,reputation_score,wallet_balance,credits,has_finder_badge')
     .eq('id', user!.id)
     .single()
 
@@ -22,6 +22,19 @@ export default async function ProfilePage() {
     .eq('user_id', user!.id)
     .order('created_at', { ascending: false })
 
+  const fallbackProfile = {
+    full_name: null,
+    phone_number: null,
+    address: null,
+    city: null,
+    state_region: null,
+    country: null,
+    reputation_score: 0,
+    wallet_balance: 0,
+    credits: 0,
+    has_finder_badge: false,
+  }
+
   return (
     <main className="px-4 py-8">
       <section className="mx-auto max-w-3xl">
@@ -30,7 +43,7 @@ export default async function ProfilePage() {
         <ProfileCard
           userId={user!.id}
           email={user!.email ?? ''}
-          profile={profile ?? { full_name: null, phone_number: null, address: null, reputation_score: 0 }}
+          profile={profile ?? fallbackProfile}
         />
 
         <WalletCard
