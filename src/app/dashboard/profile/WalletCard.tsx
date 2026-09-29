@@ -49,18 +49,18 @@ export default function WalletCard({ userId, walletBalance, credits, hasFinderBa
     }
 
     setBalance(nextBalance)
-    setMessage(`Added ₹${numericAmount} (test recharge — no real payment taken).`)
+    setMessage(`Added £${numericAmount} (test recharge — no real payment taken).`)
   }
 
   return (
     <div className="tag-card mt-6 p-6 sm:p-8">
       <p className="font-utility text-xs font-bold uppercase text-[var(--color-primary-trust-dark)]">Wallet</p>
-      <p className="font-display mt-2 text-5xl font-semibold text-[var(--color-ink)]">₹{balance}</p>
+      <p className="font-display mt-2 text-5xl font-semibold text-[var(--color-ink)]">£{balance}</p>
       <p className="mt-1 text-sm text-[var(--color-ink-muted)]">Used to order printed QR tags. Test mode — no real payment is processed.</p>
 
       <form onSubmit={handleRecharge} className="mt-4 flex flex-wrap items-end gap-3">
         <div>
-          <label className="block text-sm font-bold text-[var(--color-ink)]">Recharge amount (₹)</label>
+          <label className="block text-sm font-bold text-[var(--color-ink)]">Recharge amount (£)</label>
           <input
             type="number"
             min="1"

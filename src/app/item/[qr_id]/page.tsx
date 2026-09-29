@@ -12,9 +12,9 @@ type PublicItem = {
   reward_amount: number | null
 }
 
-const rewardFormatter = new Intl.NumberFormat('en-IN', {
+const rewardFormatter = new Intl.NumberFormat('en-GB', {
   style: 'currency',
-  currency: 'INR',
+  currency: 'GBP',
   maximumFractionDigits: 0,
 })
 

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import NewItemForm from './NewItemForm'
 
-const QR_ISSUANCE_FEE = 49 // ₹49 test fee — adjust freely, this is not tied to anything external
+const QR_ISSUANCE_FEE = 49 // £49 test fee — adjust freely, this is not tied to anything external
 
 export default async function NewItemPage() {
   const supabase = await createClient()

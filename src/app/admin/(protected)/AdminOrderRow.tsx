@@ -62,7 +62,7 @@ export default function AdminOrderRow({
           <p className="font-black text-[var(--color-ink)]">{itemTitle}</p>
           <p className="mt-1 text-sm text-[var(--color-ink-muted)]">{ownerName} · {ownerPhone}</p>
           <p className="mt-1 text-sm text-[var(--color-ink-muted)]">{shippingAddress}</p>
-          <p className="mt-1 text-xs font-bold text-[var(--color-ink-muted)]">₹{amountCharged} charged</p>
+          <p className="mt-1 text-xs font-bold text-[var(--color-ink-muted)]">£{amountCharged} charged</p>
         </div>
 
         <div className="text-right">

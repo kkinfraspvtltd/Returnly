@@ -29,7 +29,7 @@ export default function NewItemForm({ userId, walletBalance, ownerAddress, qrFee
     setError(null)
 
     if (!hasSufficientBalance) {
-      setError(`Insufficient wallet balance. This tag costs ₹${qrFee} — recharge in your profile first.`)
+      setError(`Insufficient wallet balance. This tag costs £${qrFee} — recharge in your profile first.`)
       return
     }
 
@@ -115,9 +115,9 @@ export default function NewItemForm({ userId, walletBalance, ownerAddress, qrFee
         </div>
 
         <div className={`rounded-2xl border p-4 ${hasSufficientBalance ? 'border-[var(--color-primary-trust)]/30 bg-[var(--color-primary-trust)]/8' : 'border-[var(--color-alert-lost)]/30 bg-[var(--color-alert-lost-soft)]'}`}>
-          <p className="text-sm font-black text-[var(--color-ink)]">QR tag fee: ₹{qrFee}</p>
+          <p className="text-sm font-black text-[var(--color-ink)]">QR tag fee: £{qrFee}</p>
           <p className="mt-1 text-sm text-[var(--color-ink-muted)]">
-            Wallet balance: ₹{walletBalance}. {hasSufficientBalance ? 'This will be charged when you save.' : `Recharge at least ₹${qrFee - walletBalance} more before continuing.`}
+            Wallet balance: £{walletBalance}. {hasSufficientBalance ? 'This will be charged when you save.' : `Recharge at least £${qrFee - walletBalance} more before continuing.`}
           </p>
         </div>
 
@@ -154,7 +154,7 @@ export default function NewItemForm({ userId, walletBalance, ownerAddress, qrFee
         </div>
 
         <button type="submit" disabled={loading || !hasSufficientBalance} className="btn-primary w-full px-4 py-3 disabled:opacity-50">
-          {loading ? 'Processing payment…' : `Pay ₹${qrFee} and order tag`}
+          {loading ? 'Processing payment…' : `Pay £${qrFee} and order tag`}
         </button>
       </form>
     </div>

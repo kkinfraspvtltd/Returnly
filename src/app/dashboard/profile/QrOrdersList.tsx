@@ -47,7 +47,7 @@ export default function QrOrdersList({ orders }: { orders: QrOrder[] }) {
               <div className="min-w-0">
                 <p className="truncate text-sm font-black text-[var(--color-ink)]">{item.title}</p>
                 <p className="mt-1 text-xs font-bold text-[var(--color-ink-muted)]">
-                  {statusLabel[order.status] ?? order.status} · ₹{order.amount_charged}
+                  {statusLabel[order.status] ?? order.status} · £{order.amount_charged}
                 </p>
               </div>
             </div>

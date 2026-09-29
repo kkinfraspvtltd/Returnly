@@ -22,9 +22,9 @@ type ItemDetailClientProps = {
   fulfillmentStatus: string | null
 }
 
-const currencyFormatter = new Intl.NumberFormat('en-IN', {
+const currencyFormatter = new Intl.NumberFormat('en-GB', {
   style: 'currency',
-  currency: 'INR',
+  currency: 'GBP',
   maximumFractionDigits: 0,
 })
 
@@ -56,10 +56,10 @@ export default function ItemDetailClient({ item, fulfillmentStatus }: ItemDetail
     const supabase = createClient()
     const numericReward = nextRewardAmount ? Number(nextRewardAmount) : null
 
-    // Minimum reward floor: if a reward is set at all, it must be ≥ ₹20.
+    // Minimum reward floor: if a reward is set at all, it must be ≥ £20.
     // Empty/zero is still allowed — no reward is a valid choice.
     if (nextIsLost && numericReward !== null && numericReward > 0 && numericReward < 20) {
-      setError('Reward must be at least ₹20, or left empty for no reward.')
+      setError('Reward must be at least £20, or left empty for no reward.')
       return
     }
 
@@ -143,10 +143,10 @@ export default function ItemDetailClient({ item, fulfillmentStatus }: ItemDetail
               {isLost && (
                 <div className="mt-5 rounded-2xl bg-white/70 p-4">
                   <label className="block text-sm font-bold text-[var(--color-ink)]" htmlFor="reward">
-                    Optional reward amount (min ₹20)
+                    Optional reward amount (min £20)
                   </label>
                   <div className="mt-2 flex items-center gap-3">
-                    <span className="text-lg font-extrabold text-[#7a3d0b]">₹</span>
+                    <span className="text-lg font-extrabold text-[#7a3d0b]">£</span>
                     <input
                       id="reward"
                       min="0"
